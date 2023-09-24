@@ -1,3 +1,5 @@
-const firstNum = [];
-const operator = '';
-const secondNum = [];
+// Variables for two numbers and an operator
+
+let firstNum;
+let operator;
+let secondNum;
