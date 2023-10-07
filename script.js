@@ -5,6 +5,30 @@ let operator;
 let secondNum;
 let display = document.querySelector('#display');
 
+let zero = document.querySelector('.zero');
+zero === 0;
+let one = document.querySelector('.one');
+one === 1;
+let two = document.querySelector('.two');
+two === 2;
+let three = document.querySelector('.three');
+three === 3;
+let four = document.querySelector('.four');
+four === 4;
+let five = document.querySelector('.five');
+five === 5;
+let six = document.querySelector('.six');
+six === 6;
+let seven = document.querySelector('.seven');
+seven === 7;
+let eight = document.querySelector('.eight');
+eight === 8;
+let nine = document.querySelector('.nine');
+nine === 9;
+
+
+
+
 // Function to take two numbers and an operator then calls another function on the numbers
 
 function operate(num1, num2, operator) {
