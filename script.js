@@ -3,7 +3,7 @@
 let firstNum;
 let operator;
 let secondNum;
-let display = document.querySelector('#output');
+let display = document.querySelector('#display');
 
 // Function to take two numbers and an operator then calls another function on the numbers
 
