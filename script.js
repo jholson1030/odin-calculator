@@ -68,4 +68,12 @@ const equalsButton = document.querySelector('#equal');
 equalsButton.addEventListener('click', function() {
     let result = operate(firstNum, secondNum, operator);
     display.textContent = result;
-})
+});
+
+let numberButtons = document.querySelectorAll('.number');
+numberButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        let value = event.currentTarget.getAttribute('data-value');
+        display.textContent += value;
+    });
+});
