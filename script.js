@@ -17,7 +17,7 @@ function operate(num1, num2, operator) {
         return multiply(num1, num2);
     } else if (operator = '/') {
         if (num2 === 0) {
-            alert("***Don't be a dummy, dont divide by zero!!!***");
+            alert("***Don't be a dummy, you can't divide by zero!!!***");
         } else {
             return divide(num1, num2);
         }
@@ -25,10 +25,12 @@ function operate(num1, num2, operator) {
         alert("***Invalid operator***");
     }
 }
-}
+
 
 function populate() {
     // This function will make the buttons clicked display on the display div
+    let result = operate(firstNum, secondNum, operator);
+    display.textContent = result;
 }
 
 function add (num1, num2) {
