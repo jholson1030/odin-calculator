@@ -29,8 +29,7 @@ function operate(num1, num2, operator) {
 
 function populate() {
     // This function will make the buttons clicked display on the display div
-    let result = operate(firstNum, secondNum, operator);
-    display.textContent = result;
+    
 }
 
 function add (num1, num2) {
@@ -48,3 +47,11 @@ function multiply (num1, num2) {
 function divide (num1, num2) {
     return num1 / num2;
 }
+
+// Event listeners
+
+const equalsButton = document.querySelector('#equal');
+equalsButton.addEventListener('click', function() {
+    let result = operate(firstNum, secondNum, operator);
+    display.textContent = result;
+})
