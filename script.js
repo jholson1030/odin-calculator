@@ -62,6 +62,9 @@ function populate() {
         } else if (event.target.classList.contains('divide')) {
             display.innerHTML += ' / ';
             console.log('divided by');
+        } else if (event.target.classList.contains('equal')) {
+            display.innerHTML += ' = ';
+            console.log('equals');
         }
     });
 }
