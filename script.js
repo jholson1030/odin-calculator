@@ -50,6 +50,18 @@ function populate() {
             let numberValue = event.target.getAttribute('data-value');
             display.innerHTML += numberValue;
             console.log('number');
+        } else if (event.target.classList.contains('add')) {
+            display.innerHTML += ' + ';
+            console.log('plus');
+        } else if (event.target.classList.contains('subtract')) {
+            display.innerHTML += ' - ';
+            console.log('minus');
+        } else if (event.target.classList.contains('multiply')) {
+            display.innerHTML += ' * ';
+            console.log('times');
+        } else if (event.target.classList.contains('divide')) {
+            display.innerHTML += ' / ';
+            console.log('divided by');
         }
     });
 }
