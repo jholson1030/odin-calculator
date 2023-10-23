@@ -44,6 +44,7 @@ function operate(num1, num2, operator) {
 function populate() {
     // This function will make the buttons clicked display on the display div
     let buttons = document.querySelector('#buttons-container');
+    console.log(buttons);
     buttons.addEventListener('click', function(event) {
         if (event.target.classList.contains('number')) {
             let numberValue = event.target.getAttribute('data-value');
@@ -71,7 +72,7 @@ function divide (num1, num2) {
 
 // Event listeners
 
-const equalsButton = document.querySelector('#equal');
+const equalsButton = document.querySelector('.equal');
 equalsButton.addEventListener('click', function() {
     let result = operate(firstNum, secondNum, operator);
     display.textContent = result;
