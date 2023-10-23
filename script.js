@@ -31,19 +31,26 @@ function operate(num1, num2, operator) {
         return multiply(num1, num2);
     } else if (operator = '/') {
         if (num2 === 0) {
-            alert("***Don't be a dummy, you can't divide by zero!!!***");
+            display.textContent = "***Don't be a dummy, you can't divide by zero!!!***";
         } else {
             return divide(num1, num2);
         }
     } else {
-        alert("***Invalid operator***");
+        display.textContent = "***Invalid operator***";
     }
 }
 
 
 function populate() {
     // This function will make the buttons clicked display on the display div
-    
+    let buttons = document.querySelector('#buttons');
+    buttons.addEventListener('click', function(event) {
+        if (event.target.classList.contains('number')) {
+            let numberValue = event.target.getAttribute('data-value');
+            display.innerHTML += numberValue;
+            console.log('number');
+        }
+    });
 }
 
 function add (num1, num2) {
