@@ -4,6 +4,7 @@ let firstNum;
 let operator;
 let secondNum;
 let display = document.querySelector('#display');
+let displayValue = [];
 
 let zero = document.querySelector('.zero');
 let one = document.querySelector('.one');
