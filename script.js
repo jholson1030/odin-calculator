@@ -50,18 +50,32 @@ function populate() {
         if (event.target.classList.contains('number')) {
             let numberValue = event.target.getAttribute('data-value');
             display.innerHTML += numberValue;
+            displayValue += [[numberValue],];
+            console.log(displayValue);
             console.log('number');
         } else if (event.target.classList.contains('add')) {
             display.innerHTML += ' + ';
+            firstNum = [displayValue];
+            displayValue = [];
+            console.log(firstNum);
             console.log('plus');
         } else if (event.target.classList.contains('subtract')) {
             display.innerHTML += ' - ';
+            firstNum = [displayValue];
+            displayValue = [];
+            console.log(firstNum);
             console.log('minus');
         } else if (event.target.classList.contains('multiply')) {
             display.innerHTML += ' * ';
+            firstNum = [displayValue];
+            displayValue = [];
+            console.log(firstNum);
             console.log('times');
         } else if (event.target.classList.contains('divide')) {
             display.innerHTML += ' / ';
+            firstNum = [displayValue];
+            displayValue = [];
+            console.log(firstNum);
             console.log('divided by');
         } else if (event.target.classList.contains('equal')) {
             display.innerHTML += ' = ';
