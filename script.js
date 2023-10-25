@@ -93,6 +93,7 @@ function populate() {
             firstNum = '';
             secondNum = '';
             operator = '';
+            display.textContent = '';
         }
     });
 }
