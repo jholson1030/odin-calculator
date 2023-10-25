@@ -1,10 +1,10 @@
 // Variables for two numbers and an operator
 
-let firstNum = null;
+let firstNum = '';
 let operator = null;
-let secondNum = null;
+let secondNum = '';
 let display = document.querySelector('#display');
-let displayValue = [];
+let displayValue = '';
 
 let zero = document.querySelector('.zero');
 let one = document.querySelector('.one');
@@ -50,35 +50,35 @@ function populate() {
         if (event.target.classList.contains('number')) {
             let numberValue = event.target.getAttribute('data-value');
             display.innerHTML += numberValue;
-            displayValue += [[numberValue],];
+            displayValue += numberValue;
             console.log(displayValue);
             console.log('number');
         } else if (event.target.classList.contains('add')) {
             display.innerHTML += ' + ';
-            firstNum = [displayValue];
+            firstNum = displayValue;
             displayValue = [];
-            operator = 'add';
+            operator = '+';
             console.log(firstNum);
             console.log('plus');
         } else if (event.target.classList.contains('subtract')) {
             display.innerHTML += ' - ';
-            firstNum = [displayValue];
+            firstNum = displayValue;
             displayValue = [];
-            operator = 'minus';
+            operator = '-';
             console.log(firstNum);
             console.log('minus');
         } else if (event.target.classList.contains('multiply')) {
             display.innerHTML += ' * ';
-            firstNum = [displayValue];
+            firstNum = displayValue;
             displayValue = [];
-            operator = 'multiply';
+            operator = '*';
             console.log(firstNum);
             console.log('times');
         } else if (event.target.classList.contains('divide')) {
             display.innerHTML += ' / ';
-            firstNum = [displayValue];
+            firstNum = displayValue;
             displayValue = [];
-            operator = 'divide';
+            operator = '/';
             console.log(firstNum);
             console.log('divided by');
         } else if (event.target.classList.contains('equal')) {
@@ -91,10 +91,10 @@ function populate() {
             }
             console.log('equals');
         } else if (event.target.classList.contains('clear')) {
-            displayValue = [];
-            firstNum = [];
-            secondNum = [];
-            operator = [];
+            displayValue = '';
+            firstNum = '';
+            secondNum = '';
+            operator = '';
         }
     });
 }
