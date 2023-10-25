@@ -1,8 +1,8 @@
 // Variables for two numbers and an operator
 
-let firstNum;
-let operator;
-let secondNum;
+let firstNum = null;
+let operator = null;
+let secondNum = null;
 let display = document.querySelector('#display');
 let displayValue = [];
 
