@@ -117,11 +117,7 @@ function divide (num1, num2) {
 
 // Event listeners
 
-const equalsButton = document.querySelector('.equal');
-equalsButton.addEventListener('click', function() {
-    let result = operate(firstNum, secondNum, operator);
-    display.textContent = result;
-});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     populate();
