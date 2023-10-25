@@ -83,7 +83,7 @@ function populate() {
             console.log('divided by');
         } else if (event.target.classList.contains('equal')) {
             display.innerHTML += ' = ';
-            secondNum = [displayValue];
+            secondNum = displayValue;
             displayValue = '';
             let result = operate(parseFloat(firstNum), parseFloat(secondNum), operator);
             display.textContent = result;
