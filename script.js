@@ -1,8 +1,6 @@
 // Variables for two numbers and an operator
 
-let firstNum = '';
-let operator = null;
-let secondNum = '';
+let expression = [];
 let display = document.querySelector('#display');
 let displayValue = '';
 
@@ -23,6 +21,7 @@ let nine = document.querySelector('.nine');
 // Function to take two numbers and an operator then calls another function on the numbers
 
 function operate(expressionArray) {
+    // Handle multiplication and division first
     for (let i = 0; i < expressionArray.length; i++) {
         if (expressionArray[i] === '*' || expressionArray[i] === '/') {
             let result = simpleOperate(expressionArray[i - 1], expressionArray[i + 1], expressionArray[i]);
@@ -31,18 +30,27 @@ function operate(expressionArray) {
         }
     }
     
-
-    function simpleOperate(num1, num2, operator) {
-        switch(operator) {
-            case '+': return num1 + num2;
-            case '-': return num1 - num2;
-            case '*': return num1 * num2;
-            case '/': return num2 !== 0 ? num1 / num2 : 'Broken...';
-            default: return 'Unknown operator';
+    // Next handle addition and subtraction
+    for (let i = 0; i < expressionArray.length; i++) {
+        if (expressionArray[i] === '+' || expressionArray[i] === '-') {
+            let result = simpleOperate(expressionArray[i - 1], expressionArray[i + 1], expressionArray[i]);
+            expressionArray.splice(i - 1, 3, result);
+            i--;
         }
     }
+    return expressionArray[0];
+    
 }
 
+function simpleOperate(num1, num2, operator) {
+    switch(operator) {
+        case '+': return num1 + num2;
+        case '-': return num1 - num2;
+        case '*': return num1 * num2;
+        case '/': return num2 !== 0 ? num1 / num2 : 'Broken...';
+        default: return 'Unknown operator';
+    }
+}
 
 function populate() {
     // This function will make the buttons clicked display on the display div
