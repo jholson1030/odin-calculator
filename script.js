@@ -22,22 +22,24 @@ let nine = document.querySelector('.nine');
 
 // Function to take two numbers and an operator then calls another function on the numbers
 
-function operate(num1, num2, operator) {
-    // This function will take an operator and two numbers and call one of the operator functions on it
-    if (operator === '+') {
-        return add(num1, num2);
-    } else if (operator === '-') {
-        return subtract(num1, num2);
-    } else if (operator === '*') {
-        return multiply(num1, num2);
-    } else if (operator === '/') {
-        if (num2 === 0) {
-            display.textContent = "***Don't be a dummy, you can't divide by zero!!!***";
-        } else {
-            return divide(num1, num2);
+function operate(expressionArray) {
+    for (let i = 0; i < expressionArray.length; i++) {
+        if (expressionArray[i] === '*' || expressionArray[i] === '/') {
+            let result = simpleOperate(expressionArray[i - 1], expressionArray[i + 1], expressionArray[i]);
+            expressionArray.splice(i - 1, 3, result);
+            i--;
         }
-    } else {
-        display.textContent = "***Invalid operator***";
+    }
+    
+
+    function simpleOperate(num1, num2, operator) {
+        switch(operator) {
+            case '+': return num1 + num2;
+            case '-': return num1 - num2;
+            case '*': return num1 * num2;
+            case '/': return num2 !== 0 ? num1 / num2 : 'Broken...';
+            default: return 'Unknown operator';
+        }
     }
 }
 
