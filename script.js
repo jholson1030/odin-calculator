@@ -1,6 +1,8 @@
 // Variables for two numbers and an operator
 
-let expression = [];
+let firstNum = '';
+let operator = null;
+let secondNum = '';
 let display = document.querySelector('#display');
 let displayValue = '';
 
@@ -106,22 +108,6 @@ function populate() {
             display.textContent = '';
         }
     });
-}
-
-function add (num1, num2) {
-    return num1 + num2;
-}
-
-function subtract (num1, num2) {
-    return num1 - num2;
-}
-
-function multiply (num1, num2) {
-    return num1 * num2;
-}
-
-function divide (num1, num2) {
-    return num1 / num2;
 }
 
 // Event listeners
