@@ -56,11 +56,16 @@ function simpleOperate(num1, num2, operator) {
 
 function populate() {
     // This function will make the buttons clicked display on the display div
+    let expression = [];
+    let currentNumber = '';
+
     let buttons = document.querySelector('#buttons-container');
     console.log(buttons);
     buttons.addEventListener('click', function(event) {
-        if (event.target.classList.contains('number')) {
-            let numberValue = event.target.getAttribute('data-value');
+        let targetType = event.target.className;
+
+        if (targetType.includes('number')) {
+            currentNumber += event.target.getAttribute('data-value');
             display.innerHTML += numberValue;
             displayValue += numberValue;
             console.log(displayValue);
