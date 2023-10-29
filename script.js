@@ -64,7 +64,31 @@ function populate() {
     buttons.addEventListener('click', function(event) {
         let targetType = event.target.className;
 
-        
+        if (targetType.includes('number')) {
+            currentNumber += event.target.getAttribute('data-value');
+            display.textContent += event.target.getAttribute('data-value');
+        } else if (targetType.includes('operator')) {
+            if (currentNumber !== '') {
+                expression.push(parseFloat(currentNumber));
+                currentNumber = '';
+            }
+            expression.push(event.target.getAttribute('data-value'));
+            display.textContent += ' ' + event.target.getAttribute('data-value') + ' ';
+        } else if (targetType.includes('equal')) {
+            if (currentNumber !== '') {
+                expression.push(parseFloat(currentNumber));
+            }
+            let result = operate(expression);
+            display.textContent = result;
+            // Clears the expression array for the next calculation
+            expression = [];
+            // Stores the result in case user wants to use it in the next calculation
+            currentNumber = result.toString();
+        } else if (targetType.includes('clear')) {
+            expression = [];
+            currentNumber= '';
+            display.textContent = '';
+        }
     });
 }
 
