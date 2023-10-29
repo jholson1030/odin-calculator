@@ -45,6 +45,9 @@ function operate(expressionArray) {
 }
 
 function simpleOperate(num1, num2, operator) {
+num1 = parseFloat(num1);
+num2 = parseFloat(num2);
+
     switch(operator) {
         case '+': return num1 + num2;
         case '-': return num1 - num2;
