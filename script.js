@@ -64,54 +64,7 @@ function populate() {
     buttons.addEventListener('click', function(event) {
         let targetType = event.target.className;
 
-        if (targetType.includes('number')) {
-            currentNumber += event.target.getAttribute('data-value');
-            display.innerHTML += numberValue;
-            displayValue += numberValue;
-            console.log(displayValue);
-            console.log('number');
-        } else if (event.target.classList.contains('add')) {
-            display.innerHTML += ' + ';
-            firstNum = displayValue;
-            displayValue = '';
-            operator = '+';
-            console.log(firstNum);
-            console.log('plus');
-        } else if (event.target.classList.contains('subtract')) {
-            display.innerHTML += ' - ';
-            firstNum = displayValue;
-            displayValue = '';
-            operator = '-';
-            console.log(firstNum);
-            console.log('minus');
-        } else if (event.target.classList.contains('multiply')) {
-            display.innerHTML += ' * ';
-            firstNum = displayValue;
-            displayValue = '';
-            operator = '*';
-            console.log(firstNum);
-            console.log('times');
-        } else if (event.target.classList.contains('divide')) {
-            display.innerHTML += ' / ';
-            firstNum = displayValue;
-            displayValue = '';
-            operator = '/';
-            console.log(firstNum);
-            console.log('divided by');
-        } else if (event.target.classList.contains('equal')) {
-            display.innerHTML += ' = ';
-            secondNum = displayValue;
-            displayValue = '';
-            let result = operate(parseFloat(firstNum), parseFloat(secondNum), operator);
-            display.textContent = result;
-            console.log('equals');
-        } else if (event.target.classList.contains('clear')) {
-            displayValue = '';
-            firstNum = '';
-            secondNum = '';
-            operator = '';
-            display.textContent = '';
-        }
+        
     });
 }
 
