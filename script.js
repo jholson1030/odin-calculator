@@ -24,19 +24,23 @@ let nine = document.querySelector('.nine');
 
 function operate(expressionArray) {
     // Handle multiplication and division first
-    for (let i = 0; i < expressionArray.length; i++) {
+    let i = 0;
+    while (i < expressionArray.length) {
         if (expressionArray[i] === '*' || expressionArray[i] === '/') {
             let result = simpleOperate(expressionArray[i - 1], expressionArray[i + 1], expressionArray[i]);
-            expressionArray.splice(i - 1, 3, result);
+            expressionArray.splice(i - 1, 3, result); 
+        } else {
             i--;
         }
     }
     
     // Next handle addition and subtraction
-    for (let i = 0; i < expressionArray.length; i++) {
+    i = 0;
+    while (i < expressionArray.length) {
         if (expressionArray[i] === '+' || expressionArray[i] === '-') {
             let result = simpleOperate(expressionArray[i - 1], expressionArray[i + 1], expressionArray[i]);
-            expressionArray.splice(i - 1, 3, result);
+            expressionArray.splice(i - 1, 3, result);   
+        } else {
             i--;
         }
     }
