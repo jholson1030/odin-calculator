@@ -29,9 +29,9 @@ function operate(expressionArray) {
         if (expressionArray[i] === '*' || expressionArray[i] === '/') {
             let result = simpleOperate(expressionArray[i - 1], expressionArray[i + 1], expressionArray[i]);
             expressionArray.splice(i - 1, 3, result); 
-        } else {
-            i--;
-        }
+            continue;
+        } 
+        i++;
     }
     
     // Next handle addition and subtraction
@@ -39,10 +39,10 @@ function operate(expressionArray) {
     while (i < expressionArray.length) {
         if (expressionArray[i] === '+' || expressionArray[i] === '-') {
             let result = simpleOperate(expressionArray[i - 1], expressionArray[i + 1], expressionArray[i]);
-            expressionArray.splice(i - 1, 3, result);   
-        } else {
-            i--;
-        }
+            expressionArray.splice(i - 1, 3, result); 
+            continue;  
+        } 
+        i++
     }
     return expressionArray[0];
     
