@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "This is my take on The Odin Project's Javascript Calculator project. In this project I will build a  fully functional calculator complete with UI.",
   "main": "script.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
   "scripts": {
     "test": "jest"
   },
