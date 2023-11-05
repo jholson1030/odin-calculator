@@ -56,6 +56,21 @@ const factor = Math.pow(10, Math.max(decimalPlaces(num1), decimalPlaces(num2)));
     }
 }
 
+// Helper function to find the number of decimal places
+function decimalPlaces(num) {
+    const match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+    if (!match) {
+        return 0;
+    }
+    return Math.max(
+        0,
+        // Number of digits to the right of the decimal point
+        (match[1] ? match[1].length : 0) - 
+        // Adjust for scientific notation
+        (match[2] ? +match[2] : 0)
+    );
+}
+
 // Export functions to test
 module.exports = { operate, simpleOperate };
 
