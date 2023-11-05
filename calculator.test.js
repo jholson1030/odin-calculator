@@ -29,3 +29,9 @@ test('should correctly calculate a complex expression', () => {
     const result = operate(expression);
     expect(result).toBe(6);
   });
+
+  test('should handle floating point numbers', () => {
+    const expression = ['2.4', '+', '3.3'];
+    const result = operate(expression);
+    expect(result).toBe(5.7);
+  });
