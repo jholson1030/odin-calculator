@@ -42,9 +42,14 @@ function simpleOperate(num1, num2, operator) {
 num1 = parseFloat(num1);
 num2 = parseFloat(num2);
 
+// Calculate factor based on the operands
+const factor = Math.pow(10, Math.max(decimalPlaces(num1), decimalPlaces(num2)));
+
     switch(operator) {
         case '+': return num1 + num2;
+            return (Math.round(num1 * factor) + Math.round(num2 * factor)) / factor;
         case '-': return num1 - num2;
+            return (Math.round(num1 * factor) - Math.round(num2 * factor)) / factor;
         case '*': return num1 * num2;
         case '/': return num2 !== 0 ? num1 / num2 : 'Broken...';
         default: return 'Unknown operator';
