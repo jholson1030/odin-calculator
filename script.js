@@ -76,8 +76,7 @@ function decimalPlaces(num) {
     );
 }
 
-// Export functions to test
-module.exports = { operate, simpleOperate };
+
 
 function populate() {
     // This function will make the buttons clicked display on the display div
@@ -130,4 +129,3 @@ document.addEventListener('DOMContentLoaded', function() {
     populate();
 });
 
-const { operate, simpleOperate } = require('./calculator');
