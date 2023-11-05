@@ -46,12 +46,16 @@ num2 = parseFloat(num2);
 const factor = Math.pow(10, Math.max(decimalPlaces(num1), decimalPlaces(num2)));
 
     switch(operator) {
-        case '+': return num1 + num2;
+        case '+':
             return (Math.round(num1 * factor) + Math.round(num2 * factor)) / factor;
-        case '-': return num1 - num2;
+        case '-':
             return (Math.round(num1 * factor) - Math.round(num2 * factor)) / factor;
-        case '*': return num1 * num2;
-        case '/': return num2 !== 0 ? num1 / num2 : 'Broken...';
+        case '*':
+        // For multiplication, the factor needs to be squared
+            return (num1 * factor) * (num2 * factor) / (factor * factor);
+        case '/':
+        // Only the numerator is multiplied by the factor
+            return (num1 * factor) / (num2);
         default: return 'Unknown operator';
     }
 }
