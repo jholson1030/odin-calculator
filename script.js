@@ -56,7 +56,8 @@ const factor = Math.pow(10, Math.max(decimalPlaces(num1), decimalPlaces(num2)));
         case '/':
         // Only the numerator is multiplied by the factor
             return (num1 * factor) / (num2);
-        default: return 'Unknown operator';
+        default: 
+            return 'Unknown operator';
     }
 }
 
@@ -112,6 +113,11 @@ function populate() {
             expression = [];
             currentNumber= '';
             display.textContent = '';
+        } else if (targetType.includes('point')) {
+            if (!currentNumber.includes('.')) {
+                currentNumber += '.';
+                display.textContent += '.';
+            }
         }
     });
 }
