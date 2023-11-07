@@ -117,6 +117,26 @@ function populate() {
                 currentNumber += '.';
                 display.textContent += '.';
             }
+        } else if (targetType.includes('backspace')) {
+            if (currentNumber !== '') {
+                // Remove last number from currentNumber
+                currentNumber = currentNumber.slice(0, -1);
+                // Update display
+                display.textContent = display.textContent.slice(0, -1);
+            } else if (expression.length > 0) {
+                // Remove last entry from expression
+                let removed = expression.pop();
+                // Check if it was a number or an operator
+                if (typeof removed === 'number') {
+                    // If it was a number then make it the currentNumber and remove the digits from the display
+                    currentNumber = removed.toString().slice(0, -1);
+                    let removedLength = removed.toString.length;
+                    display.textContent = display.textContent.slice(0, -removedLength);
+                } else {
+                    // If it was an operator, just remove the operator from the display and the  spaces around it
+                    display.textContent = display.textContent.slice(0, -3);
+                }
+            }
         }
     });
 }
