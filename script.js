@@ -127,14 +127,20 @@ function populate() {
                 // Remove last entry from expression
                 let removed = expression.pop();
                 // Check if it was a number or an operator
-                if (typeof removed === 'number') {
+                if (!isNaN(removed)) {
                     // If it was a number then make it the currentNumber and remove the digits from the display
                     currentNumber = removed.toString().slice(0, -1);
-                    let removedLength = removed.toString.length;
-                    display.textContent = display.textContent.slice(0, -removedLength);
+                    // Trim trailing spaces
+                    display.textContent = display.textContent.trim(); 
+                    display.textContent = display.textContent.slice(0, -removed.toString().length);
                 } else {
                     // If it was an operator, just remove the operator from the display and the  spaces around it
-                    display.textContent = display.textContent.slice(0, -3);
+                    display.textContent = display.textContent.trim();
+                    display.textContent = display.textContent.slice(0, -1);
+                }
+                // Add a space after the last element if it's an operator
+                if (expression.length && isNaN(expression[expression.length - 1])) {
+                    display.textContent += ' ';
                 }
             }
         }
