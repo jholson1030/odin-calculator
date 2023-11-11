@@ -110,7 +110,7 @@ function populate() {
             currentNumber = result.toString();
         } else if (targetType.includes('clear')) {
             expression = [];
-            currentNumber= '';
+            currentNumber = '';
             display.textContent = '';
         } else if (targetType.includes('point')) {
             if (!currentNumber.includes('.')) {
