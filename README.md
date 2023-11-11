@@ -11,7 +11,7 @@ fully functional calculator complete with UI.
 - Create an operate function that will have three parameters (num1, num2, and operator) and call the operator function to do the math. [x]
 - Create a populate function that will take the result of the math and push it to the calculator's display. [x]
 - Add the option to use floating point numbers. [x]
-- Add a 'backspace' button so users can undo if they make a mistake. 
+- Add a 'backspace' button so users can undo if they make a mistake. [x]
 - Add keyboard support.
 - Style the calculator in CSS to make it look nice.
 
