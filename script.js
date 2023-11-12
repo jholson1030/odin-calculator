@@ -154,8 +154,12 @@ document.addEventListener('keydown', function(event) {
 
     // Check if a key is a number or an operator
     if ((key >= 0 && key <= 9) || ['+', '-', '*', '/'].includes(key)) {
-        
-    }
+        // Find the button that matches the key and clicks it
+        document.querySelector(`button[data-value='${key}']`).click();
+    } else if (key === 'Enter') {
+        // Presses the equal button
+        document.querySelector('.equal').click();
+    } 
 })
 
 document.addEventListener('DOMContentLoaded', function() {
