@@ -149,7 +149,14 @@ function populate() {
 
 // Event listeners
 
+document.addEventListener('keydown', function(event) {
+    let key = event.key;
 
+    // Check if a key is a number or an operator
+    if ((key >= 0 && key <= 9) || ['+', '-', '*', '/'].includes(key)) {
+        
+    }
+})
 
 document.addEventListener('DOMContentLoaded', function() {
     populate();
