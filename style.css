@@ -6,8 +6,14 @@ h1 {
     text-align: center;
 }
 
+#calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
 #calculator {
-    margin: 15%;
     width: 25%;
     height: 40%;
     display: flex;
@@ -15,7 +21,7 @@ h1 {
     justify-content: center;
     align-items: center;
     border: solid 5px black;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 #display {
