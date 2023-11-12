@@ -12,7 +12,7 @@ fully functional calculator complete with UI.
 - Create a populate function that will take the result of the math and push it to the calculator's display. [x]
 - Add the option to use floating point numbers. [x]
 - Add a 'backspace' button so users can undo if they make a mistake. [x]
-- Add keyboard support.
+- Add keyboard support. [x]
 - Style the calculator in CSS to make it look nice.
 
 ## Optional Project Objectives
