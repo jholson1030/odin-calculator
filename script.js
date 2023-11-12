@@ -159,8 +159,14 @@ document.addEventListener('keydown', function(event) {
     } else if (key === 'Enter') {
         // Presses the equal button
         document.querySelector('.equal').click();
-    } 
-})
+    } else if (key === 'Backspace') {
+        // Presses the clear button
+        document.querySelector('.clear').click(); 
+    } else if (key === '.') {
+        // Presses the decimal point button
+        document.querySelector('.point').click();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     populate();
