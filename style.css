@@ -39,9 +39,9 @@ h1 {
     border: solid 5px black;
     border-radius: 15px;
     width: 20vw;
-    height: 40vh;
+    height: 45vh;
     max-width: 400px;
-    max-height: 700px;
+    max-height: 800px;
 
 }
 
@@ -58,19 +58,27 @@ h1 {
 }
 
 #buttons-container {
-    height: 175px;
-    width: 275px;
+    height: 325px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 270px;
+}
+
+
 
 button {
     font-size: 22px;
     font-weight: bold;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin: 5px;
     text-decoration: none;
 }
