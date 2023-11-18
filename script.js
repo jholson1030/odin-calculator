@@ -54,6 +54,10 @@ const factor = Math.pow(10, Math.max(decimalPlaces(num1), decimalPlaces(num2)));
         // For multiplication, the factor needs to be squared
             return (num1 * factor) * (num2 * factor) / (factor * factor);
         case '/':
+            // Check if dividing by zero
+            if (num2 === 0) {
+                return 'Cannot divide by zero.';
+            }
         // Only the numerator is multiplied by the factor
             return (num1 * factor) / (num2);
         default: 
